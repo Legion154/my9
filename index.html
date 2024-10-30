@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY9 Learning Center 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://my9-learning-center.vercel.app/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+          },
+          fontFamily: {
+            eco: "Exo 2",
+          },
+          extend: {
+            colors: {
+              primary: "var(--primary)",
+              secondary: "var(--secondary)",
+              main: "#009494",
+              accent1: "#007f7f",
+              accent2: "#00b3b3",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --primary: #f4f4f4;
+          --secondary: #17252a;
+        }
+        .dark {
+          --secondary: #f4f4f4;
+          --primary: #17252a;
+        }
+      }
+    </style>
+  </head>
+  <body id="main" class="bg-primary !container font-eco relative duration-300">
+    <div
+      id="loading"
+      class="stroke-secondary h-[85vh] sm:h-[90vh] w-screen hidden justify-center items-center absolute z-50 bg-primary overflow-hidden"
+    >
+      <svg
+        class="logoLight"
+        width="240"
+        height="110"
+        viewBox="0 0 164 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          id="path1"
+          d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+          fill="#17252a"
+        ></path>
+        <path
+          id="path2"
+          d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+          fill="#17252a"
+        ></path>
+        <path
+          d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+          fill="#009494"
+        ></path>
+        <path d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z" fill="#009494"></path>
+      </svg>
+      <svg
+        class="hidden logoDark"
+        width="240"
+        height="110"
+        viewBox="0 0 164 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+          fill="#f4f4f4"
+        ></path>
+        <path
+          d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+          fill="#f4f4f4"
+        ></path>
+        <path
+          d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+          fill="#009494"
+        ></path>
+        <path d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z" fill="#009494"></path>
+      </svg>
+    </div>
+    <header
+      id="results"
+      class="body border-b border-b-transparent bg-primary sticky top-0 z-10 py-5 px-3.5 sm:px-14 md:px-5 xl:px-20 2xl:px-28 flex flex-row items-center justify-between duration-300"
+    >
+      <div>
+        <svg
+          class="logoLight"
+          width="130"
+          height="45"
+          viewBox="0 0 164 57"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="path1"
+            d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+            fill="#17252a"
+          ></path>
+          <path
+            id="path2"
+            d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+            fill="#17252a"
+          ></path>
+          <path
+            d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+            fill="#009494"
+          ></path>
+          <path d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z" fill="#009494"></path>
+        </svg>
+        <svg
+          class="hidden logoDark"
+          width="130"
+          height="45"
+          viewBox="0 0 164 57"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+            fill="#f4f4f4"
+          ></path>
+          <path
+            d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+            fill="#f4f4f4"
+          ></path>
+          <path
+            d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+            fill="#009494"
+          ></path>
+          <path d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z" fill="#009494"></path>
+        </svg>
+      </div>
+      <ul class="hidden flex-row items-center gap-8 text-lg lg:flex">
+        <a href="#main"
+          ><li
+            class="text-secondary border-transparent border-b-2 hover:border-accent2 hover:text-accent2 pb-0.5 duration-200 cursor-pointer"
+          >
+            Teachers
+          </li></a
+        >
+        <a href="#courses"
+          ><li
+            class="text-secondary border-transparent border-b-2 hover:border-accent2 hover:text-accent2 pb-0.5 duration-200 cursor-pointer"
+          >
+            Courses
+          </li></a
+        >
+        <a href="#main"
+          ><li
+            class="text-secondary border-transparent border-b-2 hover:border-accent2 hover:text-accent2 pb-0.5 duration-200 cursor-pointer"
+          >
+            Results
+          </li></a
+        >
+        <a href="#contact"
+          ><li
+            class="text-secondary border-transparent border-b-2 hover:border-accent2 hover:text-accent2 pb-0.5 duration-200 cursor-pointer"
+          >
+            Contact
+          </li></a
+        >
+      </ul>
+      <div class="flex flex-row items-center gap-6">
+        <div class="hidden flex-row items-center gap-6 sm:flex">
+          <div id="mode">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#00b3b3"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="hidden cursor-pointer"
+              id="sun"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 4h.01"></path>
+              <path d="M20 12h.01"></path>
+              <path d="M12 20h.01"></path>
+              <path d="M4 12h.01"></path>
+              <path d="M17.657 6.343h.01"></path>
+              <path d="M17.657 17.657h.01"></path>
+              <path d="M6.343 17.657h.01"></path>
+              <path d="M6.343 6.343h.01"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#00b3b3"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="cursor-pointer"
+              id="moon"
+            >
+              <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"></path>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.9 4.9 1.4 1.4"></path>
+              <path d="m17.7 17.7 1.4 1.4"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.3 17.7-1.4 1.4"></path>
+              <path d="m19.1 4.9-1.4 1.4"></path>
+            </svg>
+          </div>
+          <button
+            onclick="document.getElementById('langItems').classList.toggle('hidden')"
+            id="langChanger"
+            class="p-1 rounded-full hover:bg-gray-900/10 select-none outline-none"
+          >
+            <img
+              id="langChanger_img"
+              src="./images/en.png"
+              class="size-6 relative"
+              alt=""
+            />
+          </button>
+        </div>
+        <div
+          id="langItems"
+          class="hidden absolute rounded-md top-16 right-72 shadow-lg shadow-gray-500/10 p-3 border border-transparent bg-primary focus:outline-none"
+        >
+          <div
+            onclick="lang('en')"
+            id="en"
+            class="pt-[9px] pb-2 px-5 rounded-md text-secondary hover:text-black hover:bg-gray-200 hover:bg-opacity-80 focus:bg-gray-200 focus:bg-opacity-80 select-none cursor-pointer"
+          >
+            <div class="flex flex-row items-center space-x-2 text-sm">
+              <img src="./images/en.png" class="size-4" alt="English" />
+              <span>English</span>
+            </div>
+          </div>
+          <div
+            onclick="lang('ru')"
+            id="ru"
+            class="pt-[9px] pb-2 px-5 rounded-md text-secondary hover:text-black hover:bg-gray-200 hover:bg-opacity-80 hover:text-blue-gray-900/10 select-none cursor-pointer"
+          >
+            <div class="flex flex-row items-center space-x-2 text-sm">
+              <img src="./images/ru.png" class="size-4" alt="Russia" />
+              <span>Россия</span>
+            </div>
+          </div>
+          <div
+            onclick="lang('uz')"
+            id="uz"
+            class="pt-[9px] pb-2 px-5 rounded-md text-secondary hover:text-black hover:bg-gray-200 hover:bg-opacity-80 hover:text-blue-gray-900/10 select-none cursor-pointer"
+          >
+            <div class="flex flex-row items-center space-x-2 text-sm">
+              <img src="./images/uz.png" class="size-4" alt="Uzbek" />
+              <span>O'zbek</span>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <button
+            class="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] font-sans focus:outline-none"
+          >
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"
+            ></span
+            ><span
+              class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class=""
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <span>+998 95 555 55 39</span>
+            </span>
+          </button>
+          <a href="tel:+998955555539"
+            ><button
+              aria-label="call"
+              class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-85 focus:shadow-none active:opacity-[0.85] active:shadow-none flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main"
+              type="button"
+            >
+              <i class="fa-solid fa-phone-volume fa-shake"></i>
+            </button>
+          </a>
+        </div>
+        <i
+          onclick="sitebar()"
+          id="burger"
+          class="fa-solid fa-bars text-2xl text-accent2 cursor-pointer flex lg:hidden"
+        ></i>
+      </div>
+    </header>
+
+    <!-- SITEBAR -->
+
+    <div
+      id="menu"
+      class="fixed -right-10 top-0 z-30 w-0 h-screen pl-2 pr-3.5 py-5 bg-primary overflow-hidden flex flex-col gap-8 lg:hidden border-l border-l-accent2 select-none duration-500"
+    >
+      <div class="flex flex-row items-center justify-between pl-2 pr-2">
+        <div class="">
+          <svg
+            class="logoLight cursor-pointer"
+            width="130"
+            height="45"
+            viewBox="0 0 164 57"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="path1"
+              d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+              fill="#17252a"
+            ></path>
+            <path
+              id="path2"
+              d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+              fill="#17252a"
+            ></path>
+            <path
+              d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+              fill="#009494"
+            ></path>
+            <path
+              d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z"
+              fill="#009494"
+            ></path>
+          </svg>
+          <svg
+            class="hidden logoDark cursor-pointer"
+            width="130"
+            height="45"
+            viewBox="0 0 164 57"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+              fill="#f4f4f4"
+            ></path>
+            <path
+              d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+              fill="#f4f4f4"
+            ></path>
+            <path
+              d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+              fill="#009494"
+            ></path>
+            <path
+              d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z"
+              fill="#009494"
+            ></path>
+          </svg>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#00b3b3"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          id="closeMenu"
+          class="bg-transparent border border-accent2 rounded-full p-1 active:opacity-50 cursor-pointer"
+        >
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-2">
+        <a
+          id="teacherS"
+          href="#main"
+          onclick="menuLinks('teacherS')"
+          class="ripple-button flex flex-row items-center gap-3 p-3 rounded-lg text-secondary shadow-sm shadow-accent2 cursor-pointer leading-tight hover:bg-gray-400/10 hover:text-[#17252a] hover:opacity-80 dark:hover:bg-gray-200 duration-200 relative overflow-hidden"
+        >
+          <img width="25" src="./images/teachers.png" alt="teachers" />
+          <h1>Teachers</h1>
+        </a>
+        <a
+          id="courseS"
+          href="#courses"
+          onclick="menuLinks('courseS')"
+          class="ripple-button flex flex-row items-center gap-3 p-3 rounded-lg text-secondary shadow-sm shadow-accent2 cursor-pointer leading-tight hover:bg-gray-400/10 hover:text-[#17252a] hover:opacity-80 dark:hover:bg-gray-200 duration-200 relative overflow-hidden"
+        >
+          <img width="25" src="./images/courses.png" alt="courses" />
+          <h1>Courses</h1>
+        </a>
+        <a
+          id="cardS"
+          href="#main"
+          onclick="menuLinks('cardS')"
+          class="ripple-button flex flex-row items-center gap-3 p-3 rounded-lg text-secondary shadow-sm shadow-accent2 cursor-pointer leading-tight hover:bg-gray-400/10 hover:text-[#17252a] hover:opacity-80 dark:hover:bg-gray-200 duration-200 relative overflow-hidden"
+        >
+          <img width="25" src="./images/results.png" alt="Results" />
+          <h1>Results</h1>
+        </a>
+        <a
+          id="contactS"
+          href="#contact"
+          onclick="menuLinks('contactS')"
+          class="ripple-button flex flex-row items-center gap-3 p-3 rounded-lg text-secondary shadow-sm shadow-accent2 cursor-pointer leading-tight hover:bg-gray-400/10 hover:text-[#17252a] hover:opacity-80 dark:hover:bg-gray-200 duration-200 relative overflow-hidden"
+        >
+          <img width="25" src="./images/contact.png" alt="Contact" />
+          <h1>Contact</h1>
+        </a>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="px-3 flex flex-col">
+          <span class="bg-accent1 h-[0.5px] w-full"></span>
+        </div>
+        <div
+          class="flex flex-row items-center justify-between py-3 px-4 mt-8 rounded-lg shadow-sm shadow-accent1"
+        >
+          <!-- Dark mode -->
+          <div class="flex flex-row items-center gap-3">
+            <h1 class="text-secondary">Dark Mode</h1>
+            <div class="inline-flex items-center">
+              <div
+                class="relative inline-block w-8 h-4 focus:outline-none cursor-pointer rounded-full"
+              >
+                <input
+                  type="checkbox"
+                  id="modeMobile"
+                  class="peer appearance-none w-8 h-4 absolute bg-gray-300 rounded-full cursor-pointer transition-colors duration-300 peer-checked:border-gray-900 peer-checked:before:bg-gray-900 checked:bg-accent2"
+                /><label
+                  for="modeMobile"
+                  class="bg-white w-5 h-5 border border-blue-gray-100 rounded-full shadow-md absolute top-2/4 -left-1 -translate-y-2/4 peer-checked:translate-x-full transition-all duration-300 cursor-pointer before:content[''] before:block before:bg-blue-gray-500 before:w-10 before:h-10 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:transition-opacity before:opacity-0 hover:before:opacity-10 peer-checked:border-gray-900 peer-checked:before:bg-gray-900"
+                  ><div
+                    class="inline-block top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 p-5 rounded-full"
+                    style="position: relative; overflow: hidden"
+                  ></div
+                ></label>
+              </div>
+            </div>
+          </div>
+          <!-- Overlay -->
+          <span class="h-10 w-[1.5px] bg-accent1 rounded-xl"></span>
+          <!-- Lang -->
+          <div class="flex flex-row items-center gap-2.5">
+            <button id="EnMobile" class="bg-accent2 p-1 rounded-full">
+              <img src="./images/en.png" alt="English" class="size-5" />
+            </button>
+            <button id="RuMobile" class="p-1 rounded-full">
+              <img src="./images/ru.png" alt="Russia" class="size-5" />
+            </button>
+            <button id="UzMobile" class="p-1 rounded-full">
+              <img src="./images/uz.png" alt="Uzbek" class="size-5" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Social -->
+
+        <div
+          class="flex flex-row items-center justify-between px-[30px] rounded-lg shadow-sm shadow-accent2 p-3"
+        >
+          <button class="animate-pulse">
+            <i
+              class="fa-brands fa-telegram text-[27px] text-accent1 hover:scale-110"
+            ></i>
+          </button>
+          <button class="animate-pulse">
+            <i
+              class="fa-brands fa-facebook text-[27px] text-accent1 hover:scale-110"
+            ></i>
+          </button>
+          <button class="animate-pulse">
+            <i
+              class="fa-brands fa-instagram text-[27px] text-accent1 hover:scale-110"
+            ></i>
+          </button>
+          <button class="animate-pulse">
+            <i
+              class="fa-brands fa-youtube text-[27px] text-accent1 hover:scale-110"
+            ></i>
+          </button>
+        </div>
+        <h1 class="absolute bottom-6 w-full text-secondary text-center">
+          Made by<a
+            class="pl-1 text-accent2 underline"
+            href="https://t.me/justuser_74"
+            target="_blank"
+            >Student</a
+          >
+        </h1>
+      </div>
+    </div>
+
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md hidden lg:hidden z-10 cursor-pointer"
+    ></div>
+
+    <main class="body flex-col">
+      <!-- PART 1 -->
+
+      <section
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between mt-10 xl:mt-20"
+      >
+        <div
+          class="flex flex-col items-center lg:items-start justify-center gap-5 text-center"
+        >
+          <h1
+            class="text-secondary text-[38px] leading-10 sm:text-[45px] md:text-6xl lg:text-[50px] lg:w-4/5 lg:text-start font-bold sm:w-4/5"
+          >
+            English and IELTS Learning Center by
+            <span
+              class="text-[38px] leading-10 sm:text-[45px] md:text-6xl lg:w-[50px] font-bold bg-gradient-to-r from-main via-accent2 to-secondary bg-clip-text text-transparent"
+            >
+              First Lady Niner
+            </span>
+            <p class="w-full 2xl:w-1/2">Mamura Yuldasheva</p>
+          </h1>
+          <p class="text-secondary text-lg lg:text-start w-4/5">
+            We don’t just teach English, we open new horizons!
+          </p>
+          <button
+            class="relative flex items-center mt-2 px-6 py-3 w-full sm:w-auto overflow-hidden font-medium transition-all bg-main rounded-md group"
+          >
+            <span
+              class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-accent1 rounded group-hover:-mr-4 group-hover:-mt-4"
+              ><span
+                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-primary"
+              ></span></span
+            ><span
+              class="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-accent1 rounded group-hover:-ml-4 group-hover:-mb-4"
+              ><span
+                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-primary"
+              ></span></span
+            ><span
+              class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-accent1 rounded-md group-hover:translate-x-0"
+            ></span
+            ><span
+              class="relative w-full text-center text-white transition-colors duration-200 ease-in-out"
+              >Sign up for the first lesson</span
+            >
+          </button>
+        </div>
+        <img
+          src="./images/education.svg"
+          alt="education"
+          class="object-contain h-72 sm:h-80 2xl:h-[400px]"
+        />
+      </section>
+
+      <!-- PART 2 -->
+
+      <section
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 flex flex-row items-center justify-center flex-wrap gap-20 2xl:gap-40"
+      >
+        <div
+          class="cursor-pointer w-80 flex flex-col items-center justify-center gap-3 px-16 border-t-2 border-pink-500 rounded-3xl sm:hover:shadow-md sm:hover:shadow-pink-500 sm:shadow-none shadow-md shadow-pink-500 duration-300"
+        >
+          <h1 class="text-accent2 text-6xl font-bold pt-3">5+</h1>
+          <span class="text-secondary text-xl pb-3">years of experience</span>
+        </div>
+        <div
+          class="cursor-pointer w-80 flex flex-col items-center justify-center gap-3 px-16 border-t-2 border-lime-500 rounded-3xl sm:hover:shadow-md sm:hover:shadow-lime-500 sm:shadow-none shadow-md shadow-lime-500 duration-300"
+        >
+          <h1 class="text-accent2 text-6xl font-bold pt-3">300+</h1>
+          <span class="text-secondary text-xl pb-3">successful students</span>
+        </div>
+        <div
+          class="cursor-pointer w-80 flex flex-col items-center justify-center gap-3 px-16 border-t-2 border-teal-500 rounded-3xl sm:hover:shadow-md sm:hover:shadow-teal-500 sm:shadow-none shadow-md shadow-teal-500 duration-300"
+        >
+          <h1 class="text-accent2 text-6xl font-bold pt-3">15+</h1>
+          <span class="text-secondary text-xl pb-3">staff members</span>
+        </div>
+      </section>
+
+      <!-- PART 3 -->
+
+      <section
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 flex flex-col items-center justify-center gap-12"
+      >
+        <div
+          class="flex flex-col gap-2 justify-center items-center text-center text-secondary w-4/5"
+        >
+          <h1 class="text-3xl sm:text-4xl font-medium">
+            See what makes us exceptional
+          </h1>
+          <p class="mt-3 opacity-70 text-[13px] sm:text-base">
+            At MY9 Learning Center, we specialize in personalized English and
+            IELTS education. Our expert teachers and innovative methods ensure
+            students reach their full potential and achieve their goals.
+          </p>
+        </div>
+        <div
+          class="flex flex-col xl:flex-row items-center justify-center gap-10 xl:gap-20"
+        >
+          <div class="flex flex-col gap-16 xl:gap-28">
+            <!-- Free second teacher -->
+            <div
+              class="flex flex-col justify-center items-center xl:justify-end xl:items-end gap-3"
+            >
+              <div
+                class="flex flex-col-reverse xl:flex-row items-center gap-1 lg:gap-5"
+              >
+                <h1 class="text-accent2 text-lg">Free second teacher</h1>
+                <img
+                  src="./images/icon.fs.png"
+                  width="50"
+                  class="p-1.5 rounded-full border border-accent1 shadow-md shadow-accent2"
+                  alt="Free second teacher"
+                />
+              </div>
+              <p
+                class="text-secondary text-sm text-center xl:text-end opacity-90 w-4/5"
+              >
+                Need help? Assistant teachers are here to support you with any
+                questions.
+              </p>
+            </div>
+            <!-- Experienced teachers -->
+            <div
+              class="flex flex-col justify-center items-center xl:justify-end xl:items-end gap-3"
+            >
+              <div
+                class="flex flex-col-reverse xl:flex-row items-center gap-1 xl:gap-5"
+              >
+                <h1 class="text-accent2 text-lg">Experienced teachers</h1>
+                <img
+                  src="./images/icon.e.png"
+                  width="50"
+                  class="p-1.5 rounded-full border border-accent1 shadow-md shadow-accent2"
+                  alt="Free second teacher"
+                />
+              </div>
+              <p
+                class="text-secondary text-sm text-center xl:text-end opacity-90 w-4/5"
+              >
+                Our teachers are highly qualified, with specialized training and
+                excellent IELTS scores (up to 9.0).
+              </p>
+            </div>
+          </div>
+          <img
+            src="./images/mamura_yuldasheva.png"
+            class="rounded-xl border-4 border-[#f4ce73] w-[250px] lg:w-[300px]"
+            alt="Mamura Yuldasheva"
+          />
+          <div class="flex flex-col gap-16 xl:gap-28">
+            <!-- Test Center -->
+            <div
+              class="flex flex-col justify-center items-center xl:justify-start xl:items-start gap-3"
+            >
+              <div
+                class="flex flex-col xl:flex-row items-center gap-2 xl:gap-5"
+              >
+                <img
+                  src="./images/icon.tc.png"
+                  width="50"
+                  class="p-1.5 rounded-full border border-accent1 shadow-md shadow-accent2"
+                  alt="Free second teacher"
+                />
+                <h1 class="text-accent2 text-lg">Test Center</h1>
+              </div>
+              <p
+                class="text-secondary text-center xl:text-start text-sm opacity-90 w-3/4"
+              >
+                Experience the real deal with our MY9 Mock Test Center!
+              </p>
+            </div>
+            <!-- Co-working zones -->
+            <div
+              class="flex flex-col justify-center items-center xl:justify-start xl:items-start gap-3"
+            >
+              <div
+                class="flex flex-col xl:flex-row items-center gap-2 xl:gap-5"
+              >
+                <img
+                  src="./images/icon.cwz.png"
+                  width="50"
+                  class="p-1.5 rounded-full border border-accent1 shadow-md shadow-accent2"
+                  alt="Free second teacher"
+                />
+                <h1 class="text-accent2 text-lg">Co-working zones</h1>
+              </div>
+              <p
+                class="text-secondary text-center xl:text-start text-sm opacity-90 w-4/5"
+              >
+                Study English freely in our co-working zones, with support
+                teachers available for personalized lessons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PART 4 -->
+
+      <section
+        id="courses"
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 flex flex-col justify-center items-center gap-10"
+      >
+        <div class="flex flex-col justify-center items-center text-secondary">
+          <h1 class="text-3xl sm:text-4xl font-medium">Our Courses</h1>
+          <p class="mt-3 opacity-70 text-[13px] sm:text-base text-center">
+            Learn about the available courses at MY9 and choose the one that
+            suits you best
+          </p>
+        </div>
+        <div class="flex items-center justify-center flex-wrap gap-10">
+          <!-- CARD 1 -->
+          <div
+            class="relative w-80 xl:w-72 h-[450px] p-5 border-2 border-accent2 shadow-lg shadow-accent2 rounded-xl flex flex-col gap-5"
+          >
+            <h1 class="font-medium text-2xl text-center text-accent2">
+              General English
+            </h1>
+            <ul class="flex flex-col gap-2 font-light text-secondary">
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  The course covers 4 levels (from Beginner to Intermediate),
+                  each lasting 3 months.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Classes are held 3 times a week for 80 minutes, using the
+                  OXFORD SOLUTION program from Oxford University Press.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Students are provided with free textbooks and individual
+                  workbooks.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  The price includes teacher support for missed lessons or
+                  difficulties.
+                </p>
+              </li>
+            </ul>
+            <div
+              class="absolute bottom-5 left-7 w-4/5 rounded-xl bg-main border border-accent1 flex justify-center items-center text-white hover:bg-accent1 active:scale-95 duration-300"
+            >
+              <button class="py-2 px-1 text-sm">
+                Sign up for the first lesson
+              </button>
+            </div>
+          </div>
+          <!-- CARD 2 -->
+          <div
+            class="relative w-80 xl:w-72 h-[450px] p-5 border-2 border-accent2 shadow-lg shadow-accent2 rounded-xl flex flex-col gap-5"
+          >
+            <h1 class="font-medium text-2xl text-center text-accent2">
+              IELTS Standard
+            </h1>
+            <ul class="flex flex-col gap-2 font-light text-secondary">
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Gain basic knowledge about the IELTS format.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Learn strategies for successfully passing the IELTS test.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Participate in mock tests to simulate the real IELTS exam.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Each class lasts 80 minutes, ensuring optimal engagement in
+                  learning.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  The price includes teacher support for missed lessons or
+                  difficulties.
+                </p>
+              </li>
+            </ul>
+            <div
+              class="absolute bottom-5 left-7 w-4/5 rounded-xl bg-main border border-accent1 flex justify-center items-center text-white hover:bg-accent1 active:scale-95 duration-300"
+            >
+              <button class="py-2 px-1 text-sm">
+                Sign up for the first lesson
+              </button>
+            </div>
+          </div>
+          <!-- CARD 3 -->
+          <div
+            class="relative w-80 xl:w-72 h-[450px] p-5 border-2 border-accent2 shadow-lg shadow-accent2 rounded-xl flex flex-col gap-5"
+          >
+            <h1 class="font-medium text-2xl text-center text-accent2">
+              Intensive Speaking
+            </h1>
+            <ul class="flex flex-col gap-2 font-light text-secondary">
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Improve your speaking skills in a special one-month IELTS
+                  course.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Groups of no more than 15 students.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Each student is provided with books and workbooks at no
+                  additional cost.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Each class lasts 80 minutes, ensuring optimal engagement in
+                  learning.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Individual feedback after each lesson.
+                </p>
+              </li>
+            </ul>
+            <div
+              class="absolute bottom-5 left-7 w-4/5 rounded-xl bg-main border border-accent1 flex justify-center items-center text-white hover:bg-accent1 active:scale-95 duration-300"
+            >
+              <button class="py-2 px-1 text-sm">
+                Sign up for the first lesson
+              </button>
+            </div>
+          </div>
+          <!-- CARD 4 -->
+          <div
+            class="relative w-80 xl:w-72 h-[450px] p-5 border-2 border-accent2 shadow-lg shadow-accent2 rounded-xl flex flex-col gap-5"
+          >
+            <h1 class="font-medium text-2xl text-center text-accent2">
+              Teacher Training
+            </h1>
+            <ul class="flex flex-col gap-2 font-light text-secondary">
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  A special teaching mastery course consisting of 10 lessons.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">Way to nine course.</p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Training based on American methodology.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">
+                  Additional lessons from teachers with CELTA qualifications.
+                </p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">Individual approach.</p>
+              </li>
+              <li class="flex flex-row items-start gap-3">
+                <img src="./images/check.png" width="30" alt="check" class="" />
+                <p class="text-sm opacity-90">American atmosphere.</p>
+              </li>
+            </ul>
+            <div
+              class="absolute bottom-5 left-7 w-4/5 rounded-xl bg-main border border-accent1 flex justify-center items-center text-white hover:bg-accent1 active:scale-95 duration-300"
+            >
+              <button class="py-2 px-1 text-sm">
+                Sign up for the first lesson
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PART 5 -->
+
+      <section
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 flex flex-col justify-center items-center gap-7"
+      >
+        <div class="flex flex-col justify-center items-center text-secondary">
+          <h1 class="text-3xl sm:text-4xl font-medium">FAQ</h1>
+          <p class="mt-2 opacity-70 text-[13px] sm:text-base">
+            Get answers to frequently asked questions
+          </p>
+        </div>
+        <div class="px-5 lg:px-20 py-5 lg:py-10">
+          <!--  -->
+          <div class="w-full">
+            <button
+              id="accor1_btn"
+              type="button"
+              class="group flex justify-between items-center w-full gap-5 py-4 border-b border-b-blue-gray-100 font-sans text-left font-medium select-none duration-300 text-base sm:text-xl outline-none hover:text-accent2 text-secondary"
+            >
+              How do I determine my level of English before choosing a courses?
+              <i
+                id="accor1_icon"
+                class="fa-solid fa-angle-down text-secondary duration-300 group-hover:text-accent2"
+              ></i>
+            </button>
+            <div id="accor1" class="overflow-hidden h-0">
+              <div
+                class="w-full py-4 font-sans text-sm font-light opacity-80 text-secondary"
+              >
+                For this purpose, we conduct a test for all new students. Based
+                on the results, our specialists assign students to groups. We
+                use a similar method to determine if our students can move to
+                the next level after completing previous courses.
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="w-full">
+            <button
+              id="accor2_btn"
+              type="button"
+              class="group flex justify-between items-center w-full gap-10 py-4 border-b border-b-blue-gray-100 font-sans text-left font-medium select-none duration-300 text-base sm:text-xl outline-none hover:text-accent2 text-secondary"
+            >
+              How long does it take to learn English from scratch?
+              <i
+                id="accor2_icon"
+                class="fa-solid fa-angle-down text-secondary duration-300 group-hover:text-accent2"
+              ></i>
+            </button>
+            <div id="accor2" class="overflow-hidden h-0">
+              <div
+                class="w-full py-4 font-sans text-sm font-light opacity-80 text-secondary"
+              >
+                It all depends on individual abilities and the level the student
+                wants to achieve. We can only provide approximate timelines
+                after testing and a personal conversation.
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="w-full">
+            <button
+              id="accor3_btn"
+              type="button"
+              class="group flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 font-sans text-left font-medium select-none duration-300 text-base sm:text-xl outline-none hover:text-accent2 text-secondary"
+            >
+              What age do you accept students for English courses?
+              <i
+                id="accor3_icon"
+                class="fa-solid fa-angle-down text-secondary duration-300 group-hover:text-accent2"
+              ></i>
+            </button>
+            <div id="accor3" class="overflow-hidden h-0">
+              <div
+                class="w-full py-4 font-sans text-sm font-light opacity-80 text-secondary"
+              >
+                The minimum age is 13 years. For all underage students, it is
+                mandatory to provide information about parents or guardians. All
+                issues related to the payment of English education and exam fees
+                will be addressed to them.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PART 6 -->
+
+      <section
+        id="contact"
+        class="px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 flex flex-col justify-center items-center gap-20"
+      >
+        <div class="flex flex-col justify-center items-center text-secondary">
+          <h1 class="text-3xl sm:text-4xl font-medium">Contact Us</h1>
+          <p
+            class="mt-3 opacity-70 text-[13px] sm:text-base text-center w-5/6 lg:w-full"
+          >
+            Immerse yourself in comfort and efficiency. Learn easily and with
+            pleasure!
+          </p>
+        </div>
+        <div
+          class="flex flex-col md:flex-row lg:flex-row justify-center w-[90%] gap-10"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6775696626164!2d69.222099575529!3d41.294121301775895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b00610f645b%3A0x7b8ed4724ba19468!2sMY9%20Learning%20Center!5e0!3m2!1sen!2s!4v1730043828407!5m2!1sen!2s"
+            class="rounded-lg h-[480px] lg:w-[650px]"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="flex flex-col lg:w-1/2">
+            <div
+              class="px-6 py-4 flex flex-col gap-0.5 border-b border-b-blue-gray-100"
+            >
+              <h1 class="text-lg text-accent2 font-medium">Our Address</h1>
+              <p class="text-secondary opacity-75">
+                Bunyodkor Avenue 1, Tashkent, Uzbekistan
+              </p>
+              <p class="text-secondary opacity-75">
+                Novza Metro Station, next to Ziraat Bank.
+              </p>
+            </div>
+            <div
+              class="px-6 py-4 flex flex-col gap-0.5 border-b border-b-blue-gray-100"
+            >
+              <h1 class="text-lg text-accent2 font-medium">Working Hours</h1>
+              <p class="text-secondary opacity-75">
+                Monday - Saturday: 09:00–20:00
+              </p>
+            </div>
+            <div class="px-6 py-4 flex flex-col gap-0.5">
+              <h1 class="text-lg text-accent2 font-medium">Contacts</h1>
+              <p class="text-secondary opacity-75">
+                E-Mail: infomail@my9_lc.com
+              </p>
+              <p class="text-secondary opacity-75">Phone: +998 95 555 55 37</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="body px-3.5 sm:px-14 md:px-5 lg:px-14 xl:px-20 2xl:px-28 mt-20 py-5 flex flex-col gap-5"
+    >
+      <div
+        class="flex flex-col lg:flex-row gap-10 justify-between pb-7 border-b border-b-accent2"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-row items-center gap-2">
+            <div>
+              <svg
+                class="logoDark"
+                width="50"
+                height="17"
+                viewBox="0 0 164 57"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+                  fill="#f4f4f4"
+                ></path>
+                <path
+                  d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+                  fill="#f4f4f4"
+                ></path>
+                <path
+                  d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+                  fill="#009494"
+                ></path>
+                <path
+                  d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z"
+                  fill="#009494"
+                ></path>
+              </svg>
+              <svg
+                class="logoLight"
+                width="50"
+                height="17"
+                viewBox="0 0 164 57"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 5V57H15.5V27.5L30.5 42.5L56.5 16.5L59 19V1H41.5L44.5 4L29.5 19L15.5 5H0Z"
+                  fill="#17252A"
+                ></path>
+                <path
+                  d="M97.684 35.748V57H83.236V35.916L64.168 1.56H80.128L90.46 20.88L100.792 1.56H116.668L97.684 35.748Z"
+                  fill="#17252A"
+                ></path>
+                <path
+                  d="M139.928 0.551996C143.68 0.551996 147.18 1.448 150.428 3.24C153.732 4.976 156.364 7.412 158.324 10.548C160.284 13.684 161.264 17.24 161.264 21.216C161.264 24.24 160.648 26.984 159.416 29.448C158.24 31.912 156.336 34.908 153.704 38.436L139.844 57H122.792L135.14 40.284C132.284 39.892 129.596 38.856 127.076 37.176C124.556 35.496 122.512 33.256 120.944 30.456C119.376 27.656 118.592 24.52 118.592 21.048C118.592 17.128 119.572 13.628 121.532 10.548C123.548 7.412 126.18 4.976 129.428 3.24C132.732 1.448 136.232 0.551996 139.928 0.551996ZM139.928 28.272C141.944 28.272 143.624 27.6 144.968 26.256C146.312 24.856 146.984 23.148 146.984 21.132C146.984 19.06 146.284 17.324 144.884 15.924C143.54 14.524 141.888 13.824 139.928 13.824C137.968 13.824 136.288 14.524 134.888 15.924C133.544 17.324 132.872 19.06 132.872 21.132C132.872 23.204 133.544 24.912 134.888 26.256C136.288 27.6 137.968 28.272 139.928 28.272Z"
+                  fill="#009494"
+                ></path>
+                <path
+                  d="M59.5 56.5H45.5V41.5L59.5 27.5V56.5Z"
+                  fill="#009494"
+                ></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-medium text-main uppercase">
+              Learning center
+            </h1>
+          </div>
+          <p
+            class="w-full sm:w-11/12 lg:w-3/4 text-sm font-light text-secondary opacity-95 mt-3"
+          >
+            Welcome to our learning center where we help students achieve their
+            IELTS goals. Our expert tutors provide personalized lessons to
+            ensure you reach your desired score.
+          </p>
+          <p
+            class="w-full lg:w-full xl:w-1/2 text-sm font-light text-secondary opacity-95"
+          >
+            Join us to experience a supportive and effective learning
+            environment.
+          </p>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row lg:flex-row sm:gap-0 w-full sm:justify-between xl:justify-center gap-10 lg:gap-12 2xl:gap-40"
+        >
+          <div class="flex flex-col gap-3">
+            <h1 class="text-lg text-accent2 font-medium">Contacts</h1>
+            <ul
+              class="flex flex-col gap-1.5 text-secondary font-light text-sm lg:text-base opacity-95 w-max"
+            >
+              <li>
+                Phone:
+                <span
+                  class="text-main hover:text-accent1 cursor-pointer duration-300"
+                  >+998 95 555 55 37</span
+                >
+              </li>
+              <li>
+                Email:
+                <span
+                  class="text-main hover:text-accent1 cursor-pointer duration-300"
+                  >infomail@my9_lc.com</span
+                >
+              </li>
+              <li>
+                Address:
+                <span
+                  class="text-main hover:text-accent1 cursor-pointer duration-300"
+                  >Bunyodkor Avenue 1</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-3">
+            <h1 class="text-lg text-accent2 font-medium">Social Media</h1>
+            <div
+              class="text-xl text-secondary flex flex-row items-center gap-3"
+            >
+              <i
+                class="fa-brands fa-telegram hover:text-accent2 cursor-pointer duration-300"
+              ></i>
+              <i
+                class="fa-brands fa-facebook hover:text-accent2 cursor-pointer duration-300"
+              ></i>
+              <i
+                class="fa-brands fa-instagram hover:text-accent2 cursor-pointer duration-300"
+              ></i>
+              <i
+                class="fa-brands fa-youtube hover:text-accent2 cursor-pointer duration-300"
+              ></i>
+            </div>
+            <p
+              class="text-secondary w-11/12 sm:w-3/5 md:w-4/5 lg:w-[200px] text-sm font-light opacity-95"
+            >
+              Follow us on social media for the latest updates and resources.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row-reverse justify-between gap-2">
+        <h1 class="text-secondary font-light">
+          Made by<a
+            class="pl-1 text-accent2 underline"
+            href="https://t.me/justuser_74"
+            target="_blank"
+            >Student</a
+          >
+        </h1>
+        <p class="text-secondary font-light text-sm opacity-95">
+          © 2024 MY9 Learning Center. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
