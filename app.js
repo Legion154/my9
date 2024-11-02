@@ -183,7 +183,7 @@ function sitebar() {
   let closeMenu = document.getElementById("closeMenu");
 
   if (bar === "none") {
-    menu.style.width = "340px";
+    menu.style.width = "330px";
     menu.style.right = "0";
     overlay.classList.remove("hidden");
     localStorage.setItem("sidebar", "flex");
@@ -212,26 +212,55 @@ function menuLinks(links) {
     menu.style.right = "-56px";
     overlay.classList.add("hidden");
     localStorage.setItem("sidebar", "none");
-  }, 100);
+  }, 150);
 
-  // Execute ripple effect immediately
-  const ripple = document.createElement("span");
-  const rect = button.getBoundingClientRect();
-  const size = Math.max(rect.width, rect.height);
-  const x = rect.width / 2 - size / 2;
-  const y = rect.height / 2 - size / 2;
+  button.addEventListener("click", (e) => {
+    const ripple = document.createElement("span");
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
 
-  ripple.style.width = ripple.style.height = `${size}px`;
-  ripple.style.left = `${x}px`;
-  ripple.style.top = `${y}px`;
-  ripple.classList.add("ripple");
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.classList.add("ripple");
 
-  button.appendChild(ripple);
+    button.appendChild(ripple);
 
-  // Remove ripple after animation ends
-  ripple.addEventListener("animationend", () => {
-    ripple.remove();
+    ripple.addEventListener("animationend", () => {
+      ripple.remove();
+    });
   });
+}
+
+function hover() {
+  const btn1 = document.getElementById("teacherss");
+  const btn2 = document.getElementById("coursess");
+  const btn3 = document.getElementById("cardss");
+  const btn4 = document.getElementById("contactss");
+  const btns = [btn1, btn2, btn3, btn4];
+
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", (e) => {
+      const ripple = document.createElement("span");
+      const rect = btns[i].getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      ripple.classList.add("ripple");
+
+      btns[i].appendChild(ripple);
+
+      ripple.addEventListener("animationend", () => {
+        ripple.remove();
+      });
+    });
+  }
 }
 
 function accordation() {
@@ -276,17 +305,57 @@ function border() {
   }
 }
 
+function odometer() {
+  let value = document.querySelectorAll(".num");
+  let interval = 700;
+
+  value.forEach((value) => {
+    let startValue = 0;
+    let endValue = parseInt(value.getAttribute("data-val"));
+    let duration = Math.floor(interval / endValue);
+    let counter = setInterval(() => {
+      startValue += 1;
+      value.textContent = startValue;
+      if (startValue == endValue) {
+        clearInterval(counter);
+      }
+    }, duration);
+  });
+}
+
+function modal() {
+  let modal = document.getElementById("modal");
+  let overlay = document.getElementById("overlayModal");
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.style.overflowY = "auto";
+  setTimeout(() => {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    document.body.style.overflowY = "hidden";
+  }, 2000);
+
+  overlay.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+    document.body.style.overflowY = "auto";
+  });
+}
+
 function loading() {
   let body = document.getElementsByClassName("body");
   let loading = document.getElementById("loading");
+  let form = document.getElementById("form");
   window.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < body.length; i++) {
       body[i].classList.remove("flex");
       body[i].classList.add("hidden");
+      form.classList.remove("flex");
+      form.classList.add("hidden");
       loading.style.display = "flex";
       setTimeout(() => {
-        body[i].classList.add("flex");
-        body[i].classList.remove("hidden");
+        form.classList.add("flex");
+        form.classList.remove("hidden");
         loading.style.display = "none";
       }, 2000);
     }
@@ -301,4 +370,6 @@ mode();
 modeMobile();
 accordation();
 border();
+hover();
 loading();
+// modal();
